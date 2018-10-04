@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+ <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="banner-text text-center"> 
+        <h1 style="color:#ffffff;font-family: courier;">Welcome to the coding information platform</h1>
+        <p style="color:#ffffff;font-weight: bold; font-size:20px;">Get every coding site details at one place !</p>
+    <!-- banner text  -->
+    </div>
+  </div>
+</section>
+<!-- header section --> 
+<!-- intro section -->
+<!-- intro section --> 
+<!-- services section -->
+<section id="services" class="services service-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-strategy"></span>
+        <div class="services-content">
+          <h5><a href="{% url 'users' %}" style="color:black;">All Submissions</a></h5>
+          <p>Search your queries</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-trophy"></span>
+        <div class="services-content">
+          <h5><a href = '{% url "ranks" %}' style="color:black;">Rankings</a></h5>
+          <p>Ranking of all users</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-briefcase"></span>
+        <div class="services-content">
+          <h5><a href = '{% url "questions" %}' style="color:black;">Contests(Questions)</a></h5>
+          <p>Different contests and questions</p>
+        </div>
+      </div>
+      <!--
+      <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-tools"></span>
+        <div class="services-content">
+          <h5>web design and development</h5>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Donec nulla non metus.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-genius"></span>
+        <div class="services-content">
+          <h5>Branding</h5>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Donec nulla non metus.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-megaphone"></span>
+        <div class="services-content">
+          <h5>Digital marketing</h5>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Donec nulla non metus.</p>
+        </div>
+      </div>
+    -->
+    </div>
+  </div>
+</section>
+<!-- services section --> 
+<!-- work section -->
+<section id="intro" class="section intro">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <h3 style="color: #7FA68C;">We've got what you need!</h3>
+      <p>We make it easier to get along with all types of coding enquiries. </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- work section --> 
+<!-- our team section -->
+<section id="teams" class="section teams">
+  <div class="container">
+    <div class="row">
+   
+      <div class="col-md-4 ">
+        <div class="person"> <img src=# alt="" class="img-responsive">
+          <div class="person-content">
+            <h4><b>#</b></h4>
+            <h5 class="role">NIL</h5>
+            <!-- <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p> -->
+          </div>
+          <ul class="social-icons clearfix">
+            <!-- <li><a href="#" class=""><span class="fa fa-twitter"></span></a></li> -->
+            <!-- <li><a href="#" class=""><span class="fa fa-linkedin"></span></a></li> -->
+            <!-- <li><a href="#" class=""><span class="fa fa-dribbble"></span></a></li> -->
+          </ul>
+        </div>  
+      </div>
+      <div class="col-md-6">
+        <div class="person"> <img src=# alt="" class="img-responsive">
+          <div class="person-content">
+            <h4><b>#</b></h4>
+            <h5 class="role">NIL</h5>
+            <!-- <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p> -->
+          </div>
+          <ul class="social-icons clearfix">
+            <!-- <li><a href="#" class=""><span class="fa fa-twitter"></span></a></li> -->
+            <!-- <li><a href="#" class=""><span class="fa fa-linkedin"></span></a></li> -->
+            <!-- <li><a href="#" class=""><span class="fa fa-dribbble"></span></a></li> -->
+          </ul>
+        </div>
+      </div>
+      
+  </div>
+</section>
+<!-- our team section --> 
+<!-- Testimonials section -->
+<section id="testimonials" class="section testimonials no-padding">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h3 style="font-family: Serif; text-align: center;color: #7FA68C;">Top users from different sites</h3>
+                {% for x in data4 %}
+                  <p>{{ x.0 }} : <b>{{ x.1 }}</b> ,{{ x.2 }} </p>
+                {% endfor %}
+              </blockquote>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h3 style="font-family: Serif;text-align: center;color: #7FA68C;">Codechef top users</h3>
+                {% for x in data1 %}
+                  <p>{{ x.0 }} <b>{{ x.1 }}</b> ,{{ x.2 }} </p>
+                {% endfor %}
+              </blockquote>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h3 style="font-family: Serif;text-align: center;color: #7FA68C;">Spoj top users</h3>
+                {% for x in data2 %}
+                  <p>{{ x.0 }} <b>{{ x.1 }}</b> ,{{ x.2 }} </p>
+                {% endfor %}
+              </blockquote>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-12">
+              <blockquote>
+                <h3 style="font-family: Serif;text-align: center;color: #7FA68C;">Coderbyte top users</h3>
+               {% for x in data3 %}
+                  <p>{{ x.0 }} <b>{{ x.1 }}</b> ,{{ x.2 }} </p>
+                {% endfor %}
+              </blockquote>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonials section --> 
+
+<!-- Footer section -->
+<footer class="footer">
+  <div class="footer-top section">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-md-6">
+          <h5>College</h5>
+          <p>Comapny Name<br>
+            {% if username %}
+            <a href="{% url 'logout' %}" style="color:#ffffff;font-size: 9px;margin-left: 5px;">(Logout)
+            </a><br>
+            {% else %}
+            <a href="{% url 'login' %}" style="color:#ffffff;font-size: 9px;margin-left: 5px;">(LogIn)
+            </a><br>
+            {% endif %}
+<<<<<<< HEAD
+            r.kedia58@gmail.com</p>
+            
+=======
+>>>>>>> 360b7db5fed67cd3f2fec4bc7ce2f5e804807a26
+          <p>Copyright © 2017</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+{% endblock %}
